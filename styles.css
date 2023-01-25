@@ -1,0 +1,158 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 4fr 12fr;
+}
+
+.navbar,
+.recents,
+.library,
+.form-window-container {
+  border: 2px solid black;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.navbar > .title {
+  grid-column: 1/2;
+  align-self: center;
+}
+
+.navbar > .searchbar {
+  grid-column: 2/3;
+  align-self: center;
+}
+
+.form-window-container {
+  display: none;
+  padding: 10px;
+  width: 30%;
+  z-index: 1;
+  background-color: white;
+}
+
+.form-window {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 100%;
+  height: auto;
+}
+
+.btn-cancel {
+  width: 5vh;
+  height: 5vh;
+  justify-self: end;
+}
+
+.library {
+  padding: 1vw;
+}
+
+.library-contents {
+  display: grid;
+  gap: 2vw;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 0.11fr));
+}
+
+.card {
+  height: max(220px, 10vh);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card:hover {
+  cursor: pointer;
+  animation-name: card-hover;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+
+@keyframes card-hover {
+  100% {
+    scale: 1.7;
+  }
+}
+
+.cover {
+  height: 100%;
+  width: 100%;
+}
+
+.info {
+  position: absolute;
+  width: 90%;
+  top: 9%;
+  background-color: rgb(220, 220, 220, 0.6);
+  border-radius: 3px;
+  padding-top: 0vh;
+  padding-bottom: 0.5vh;
+  text-align: center;
+}
+
+.info > p:nth-child(1) {
+  font-weight: bold;
+}
+
+.info > p:nth-child(2) {
+  font-size: 0.9rem;
+}
+
+.info-details {
+  position: absolute;
+  width: auto;
+  top: 78%;
+  background-color: rgb(220, 220, 220, 0.7);
+  border-radius: 5px;
+  padding-top: 0.1vh;
+  padding-bottom: 0.1vh;
+  text-align: center;
+  line-height: 0.9;
+  font-size: 0.7rem;
+  padding: 0.3vh;
+  border-radius: 2px;
+}
+
+.btn-delete {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  font-size: 0.6rem;
+}
+
+.btn-mark-read {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  font-size: 0.6rem;
+}
+
+.read {
+  position: absolute;
+  left: 0px;
+  background-color: green;
+  width: 30%;
+  opacity: 0.8;
+  border-radius: 0px 0px 5px 0px;
+  font-size: 0.7rem;
+}
+
+.unread {
+  display: none;
+}
